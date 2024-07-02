@@ -1,6 +1,6 @@
 from setuptools import setup
 setup(name='marshmellow',
-    version='1.0',
+    version='1.0.1',
     description='A utility for creating golang structs from json for the purpose of marshalling/unmarshalling.',
     url='http://github.com/bdunford/marshmellow',
     author='Frustrated User',
