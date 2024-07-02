@@ -1,0 +1,39 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "firstName": "Sally",
+            "lastName": "Smith",
+            "age": 51,
+            "colors": ["yellow","pink","purple"],
+            "address": {
+                "street": "123 First Street",
+                "city": "Middleville",
+                "zip": "44444"
+            }, 
+            "active": false,
+            "metadata": {
+                "isTired": true,
+                "friends": 6
+            }
+
+        },
+        {
+            "firstName": "Fred",
+            "lastName": "Jones",
+            "age": 50,
+            "colors": ["blue","red","green"],
+            "address": {
+                "street": "702 main Street",
+                "city": "Springfield",
+                "zip": "90210"
+            }, 
+            "active": true,
+            "metadata": {
+                "bottleCaps": 5,
+                "fruit": "apples"
+            }
+        }
+    ],
+    "total": 2
+}

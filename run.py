@@ -1,0 +1,2 @@
+import marshmellow
+marshmellow.main()
