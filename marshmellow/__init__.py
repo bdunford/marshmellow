@@ -32,9 +32,6 @@ def merge(values):
 def cap(v): 
     return v[0].upper() + v[1:]
 
-
-#returns new key and new Type name
-
 def json_preview(v): 
     print("{")
     for k,v in v.items(): 
@@ -68,23 +65,26 @@ def type_name(mapped,outer,inner,v):
 
 
 
-def go_type(v,is_array,static):
+def go_type(v,arrays,static):
     if not static: 
         v = type(v).__name__
         if v == "str":
             v = "string"
-    if is_array: 
-        v = "[]" + v
+    if arrays: 
+        v = ("[]" * arrays) + v
     return v
 
 def go_struct_mapper(key,o):
     ret = {key:{}}
+    if isinstance(o,list):
+        o = merge(o)
     for k,v in o.items(): 
         a = False
         x = v 
         if isinstance(x,list):
-            x = merge(v)
-            a = True
+            while isinstance(x,list):
+                x = merge(x)
+                a += 1
         if isinstance(x,dict):
             tn = type_name(ret,key,k,x)
             ret[key][k] = go_type(tn,a,True)
